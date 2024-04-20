@@ -1,0 +1,224 @@
+﻿@charset "utf-8";
+
+div {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+.content {
+    flex: 1;
+}
+
+body {
+    background-image: url('/images/bck.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 a {
+    float: left;
+    text-decoration: none;
+}
+
+h1 span.first {
+    color: rosybrown;
+    font-style: italic;
+    font-family: Arial, serif;
+    font-size: 60px;
+}
+
+h1 span.second {
+    color: white;
+    font-size: 35px;
+    font-style: italic;
+    font-family: Arial, serif;
+}
+
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#header {
+    background-color: rgba(255, 204, 253, .3)
+}
+
+#searchui {
+    border-radius: 5px;
+    font-size: 7px;
+    height: 40px;
+    width: 348px;
+    float: right;
+}
+
+input {
+    border-radius: 5px;
+    border: lightgrey 1px solid;
+    font-size: 7px;
+    height: 35px;
+    width: 280px;
+}
+
+button[type="submit"] {
+    border: lightgrey 1px solid;
+    border-radius: 5px;
+    height: 30px;
+    width: 50px;
+    background-color: blanchedalmond;
+    text-align: center;
+    /*设置字距*/
+    letter-spacing: 2px;
+    /*移入按钮后变成小手形式*/
+    cursor: pointer;
+}
+
+#para1 {
+    color: white;
+    font-size: 15px;
+    height: 15px;
+}
+
+#para2 {
+    font-size: 15px;
+    height: 15px;
+}
+
+#左部菜单 {
+    background-color: rgba(112, 128, 144, .5);
+    width: 20%;
+    float: left;
+    padding: 10px;
+    height: 80px;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#左部菜单 h2 {
+    margin: 10px;
+}
+
+#左部菜单 ul {
+    list-style-type: none;
+    line-height: 1.5;
+    margin-left: 0px;
+}
+
+#左部菜单 a {
+    text-decoration: none;
+    float: left;
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 17px 0px;
+    font-size: 17px;
+    width: 150px;
+    margin: 17px 0px;
+}
+
+#左部菜单 a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#左部菜单 a.active {
+    background-color: paleturquoise;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+#左部菜单.icon {
+    display: none;
+}
+
+#内容区域 {
+    background-color: rgba(224, 255, 255, .5);
+    width: 65%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+#time {
+    text-align: center;
+    margin: 0 auto;
+    width: 15%;
+    background-color: rgba(112, 128, 144, .5);
+    height: 230px;
+}
+
+#secs,
+#hours,
+#mins {
+    color: white;
+    background-color: black;
+    display: inline-block;
+    height: 45px;
+    width: 35px;
+    font-size: 25px;
+}
+
+
+.footer {
+    height: 40px;
+    background-color: rgb(255, 229, 204, .5);
+    font-size: 20px;
+    color: whitesmoke;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    /*position: fixed;
+    bottom: 0px;
+  
+    vertical-align: bottom;*/
+    /* background: transparent url(/ui2017/alert.png) no-repeat;*/
+    /*background-position: 235px 2px;*/
+}
+
+.footer span {
+    font-size: 15px;
+}
+
+/* 为顶部导航添加黑色背景颜色 */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* 为导航栏内的链接设置样式 */
+.topnav a {
+    float: left;
+    display: block;
+    color: wheat;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 300px;
+}
+
+/* 改变悬停时链接的颜色 */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 添加一个活动类以突出显示当前页面 */
+.topnav a.active {
+    background-color: paleturquoise;
+    color: white;
+}
+
+/* 隐藏应该在小屏幕上打开和关闭 topnav 的链接 */
+.topnav .icon {
+    display: none;
+}

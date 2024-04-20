@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WeEat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+
+    <link rel="stylesheet" href="StyleSheet1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="content">
+        <div id="header">
+            <h1><a href="index.html" title="网站主页"><span class="first">WE</span><span class="second"> eat</span></a></h1>
+            <br />
+            <div id="searchui">
+                <form method="get" id="searchform" action="index.html">
+                    <input type="hidden" name="sitesearch" value="index.html" />
+                    <input type="text" name="as_q" class="box" id="searched_content" title="在此输入搜索内容。" />
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+            <br />
+            <p id="para1" style="display: inline;">&emsp;&emsp;&emsp;&emsp;enjoy your food,enjoy your life</p>
+            <span>
+                <a href="login.html" id="para2">
+                    登录/注册
+                </a>
+            </span>
+            <br />
+
+            <hr />
+        </div>
+
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">热门推荐</a>
+            <a href="#news">餐厅要闻</a>
+            <a href="order.html">点单界面</a>
+            <a href="#about">我的订单</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div id="wrapper">
+            <div id="左部菜单">
+                <h2>今日推荐</h2>
+                <ul>
+                    <li><a href="" title="综合推荐" selected>综合推荐</a></li>
+                    <li><a href="" title="大漠风情">西北菜</a></li>
+                    <li><a href="" title="东北菜">东北菜</a></li>
+                    <li><a href="" title="川菜">川菜</a></li>
+                    <li><a href="/css/index.asp" title="淮扬菜">淮扬菜</a></li>
+                    <li><a href="/css3/index.asp" title="韩式料理">韩料</a></li>
+                    <li><a href="/bootstrap5/index.asp" title="西餐">西餐</a></li>
+                </ul>
+
+            </div>
+            <div id="内容区域">
+                <a href="https://you.ctrip.com/food/harbin151/5313290.html">
+                    <h3>老厨家</h3>
+                </a>
+                <p style="display: inline;">
+                    黑龙江省哈尔滨市香坊区文政街118号
+                </p>
+                <span>电话：0451 8647 5018</span>
+                <br />
+                <button id="fried">油炸</button>
+                <button id="清淡">清淡</button>
+                <br />
+                <img id="门店照片" src="/images/mdpic.jpg" style="width: 200px; height: 200px;">
+                <p id="tit">门店照片</p>
+                <br />
+                <hr />
+                <a href="https://www.example.com">
+                    <h3>山河屯</h3>
+                </a>
+                <p style="display: inline;">
+                    黑龙江省哈尔滨市道里区顾乡大街115号 
+                </p>
+                <span>电话：0451 5555 7639</span>
+                <br />
+                <img src="https://pic3.zhimg.com/80/v2-121236c7c803b3f76f3eaf3fc117691e_720w.webp" alt="锅包肉"
+                    style="width: 200px; height: 200px;">
+                <img src="https://pic3.zhimg.com/80/v2-d27d57c01886b35853d039ee9d031b0e_720w.webp" alt="锅包肉"
+                    style="width: 200px; height: 200px;">
+                <br />
+                <hr />
+                <a href="https://www.example.com">
+                    <h3>王记小馆</h3>
+                </a>
+                <p style="display: inline;">
+                    黑龙江省哈尔滨南岗区护军街16号
+                </p>
+                <span>电话：0451 8647 5018</span>
+                <br />
+                <img src="https://qcloud.dpfile.com/pc/S5v1r49n-XrnOAKlMxK0qMFDhKy6QBMAPbRXMIrQudUa51XkxT2mSj_f_iDQoY9rl0cm-Lf9tDMlLZpO7rb3bg.jpg"
+                    alt="豆花里脊" style="width: 200px; height: 200px;">
+                <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.X0WTvi9mN-q6-xlBWaGWWAHaFj?w=216&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="豆角鸡柳" style="width: 200px; height: 200px;">
+                <img src="https://qcloud.dpfile.com/pc/fm7pA4x-PhGNzCuOVNcNWQlmQRkepEcRv5Feq825yvKMLZx-xa4Ip7E9LB56Yecwl0cm-Lf9tDMlLZpO7rb3bg.jpg"
+                    alt="门店照片" style="width: 200px; height: 200px;">
+                <br />
+                <hr />
+            </div>
+            <div id="time">
+                <h2>每天10：00菜品限时秒杀</h2>
+                <div id="hours">00</div>
+                <div id="mins">00</div>
+                <div id="secs">00</div>
+            </div>
+
+
+            <!--<div id="footer">
+                <br />
+                <br /><br>
+                <div>
+                    WeEat致力于带给您最便捷的用餐体验，足不出户即可浏览餐厅、菜品、完成订餐。
+                </div>
+                <br />
+
+            </div>-->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span><a href="http://www.hit.edu.cn/" title="联系我们" selected>联系我们</a></span>
+        <span>|</span>
+        <span><a href="http://www.hit.edu.cn/" title="cookie">隐私声明和cookie</a></span>
+        <br />
+        <span class="text-center">版权所有 © 2023 WeEat</span>
+    </footer>
+    <script src="Script1.js"></script>
+    <script>
+        var img0 = document.querySelector("img");
+        var fried = document.getElementById("fried");
+        var 清淡 = document.getElementById("清淡");
+        var tit = document.getElementById("tit");
+        fried.onclick = function () {
+            img0.src = "/images/frixue.jpg";
+            tit.innerHTML = "炸冰棍";
+        };
+
+        清淡.onclick = function () {
+            img0.src = "/images/tofu.jpg";
+            tit.innerHTML = "tofu";
+        };
+    </script>
+</body>
+
+</html>

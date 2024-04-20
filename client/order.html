@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WeEat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+
+    <link rel="stylesheet" href="StyleSheet1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="content">
+        <div id="header">
+            <h1><a href="index.html" title="网站主页"><span class="first">WE</span><span class="second"> eat</span></a></h1>
+            <br />
+            <div id="searchui">
+                <form method="get" id="searchform" action="index.html">
+                    <input type="hidden" name="sitesearch" value="index.html" />
+                    <input type="text" name="as_q" class="box" id="searched_content" title="在此输入搜索内容。" />
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+            <br />
+            <p id="para1" style="display: inline;">&emsp;&emsp;&emsp;&emsp;enjoy your food,enjoy your life</p>
+            <span>
+                <a href="afterlogin.html" id="para2">
+                </a>
+            </span>
+            <br />
+            <hr />
+        </div>
+
+        <div class="topnav" id="myTopnav">
+            <a href="index.html">热门推荐</a>
+            <a href="#news">餐厅要闻</a>
+            <a href="order.html" class="active">点单界面</a>
+            <a href="#about">我的订单</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div id="wrapper">
+            <div id="左部菜单">
+                <h2>今日推荐</h2>
+                <ul>
+                    <li><a href="" title="综合推荐" selected>综合推荐</a></li>
+                    <li><a href="" title="大漠风情">西北菜</a></li>
+                    <li><a href="" title="东北菜">东北菜</a></li>
+                    <li><a href="" title="川菜">川菜</a></li>
+                    <li><a href="/css/index.asp" title="淮扬菜">淮扬菜</a></li>
+                    <li><a href="/css3/index.asp" title="韩式料理">韩料</a></li>
+                    <li><a href="/bootstrap5/index.asp" title="西餐">西餐</a></li>
+                </ul>
+
+            </div>
+            <div id="内容区域">
+                <a href="https://www.example.com">
+                    <h3>三鲜水饺</h3>
+                </a>
+                <p style="display: inline;">
+                    商家：喜家德水饺
+                    <button onclick="addMenuItem()">添加菜品</button>
+                </p>
+                <span></span>
+                <br />
+
+                <br />
+                <img id="照片"
+                    src="https://ts1.cn.mm.bing.net/th/id/R-C.6682935927b9cb0413c17e747a66d732?rik=OdyWiZOemHvJfQ&riu=http%3a%2f%2fpic.ntimg.cn%2ffile%2f20180305%2f9885883_105327253000_2.jpg&ehk=%2fOL%2bAtqNKFYwQGOSMCz1kdJgY7nuQ73A376uvNOYUDA%3d&risl=&pid=ImgRaw&r=0"
+                    style="width: 200px; height: 200px;">
+                <br />
+                <hr />
+                <h2>购物车</h2>
+                <ul id="menu-list"></ul>
+
+
+
+            </div>
+            <div id="time">
+                <h2>每天10：00菜品限时秒杀</h2>
+                <div id="hours">00</div>
+                <div id="mins">00</div>
+                <div id="secs">00</div>
+            </div>
+
+
+            <!--<div id="footer">
+                <br />
+                <br /><br>
+                <div>
+                    WeEat致力于带给您最便捷的用餐体验，足不出户即可浏览餐厅、菜品、完成订餐。
+                </div>
+                <br />
+
+            </div>-->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span><a href="http://www.hit.edu.cn/" title="联系我们" selected>联系我们</a></span>
+        <span>|</span>
+        <span><a href="http://www.hit.edu.cn/" title="cookie">隐私声明和cookie</a></span>
+        <br />
+        <span class="text-center">版权所有 © 2023 WeEat</span>
+    </footer>
+    <script src="Script1.js"></script>
+    <script>
+        // JavaScript 代码
+        function addMenuItem() {
+            // 获取菜品名
+            var dishName = "三鲜水饺";
+
+            // 创建新的列表项
+            var listItem = document.createElement("li");
+            listItem.className = "menu-item";
+            listItem.textContent = dishName;
+
+            // 将新的列表项添加到菜单列表中
+            var menuList = document.getElementById("menu-list");
+            menuList.appendChild(listItem);
+        }
+    </script>
+</body>
+
+</html>

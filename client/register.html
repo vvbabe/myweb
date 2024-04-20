@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/layui/css/layui.css">                         
+    <style>
+         
+        body {
+            background-image: url('/images/bck.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 a {
+            float: left;
+            text-decoration: none;
+        }
+
+        h1 span.first {
+            color: rosybrown;
+            font-style: italic;
+            font-family: Arial, serif;
+            font-size: 60px;
+        }
+
+        h1 span.second {
+            color: white;
+            font-size: 35px;
+            font-style: italic;
+            font-family: Arial, serif;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        input {
+            border-radius: 5px;
+            border: lightgrey 1px solid;
+            font-size: 7px;
+            height: 40px;
+            width: 348px;
+            /*先设定一个值，在通过页面检查按住width一直加减：上下箭头直到边框突然回缩*/
+        }
+
+        input[type="checkbox"] {
+            border-radius: 5px;
+            border: lightgrey 1px solid;
+            height: 15px;
+            width: 15px;
+        }
+
+        button[type="submit"] {
+            border: lightgrey 1px solid;
+            border-radius: 5px;
+            height: 50px;
+            width: 175px;
+            background-color: blanchedalmond;
+            text-align: center;
+            /*设置字距*/
+            letter-spacing: 2px;
+            /*移入按钮后变成小手形式*/
+            cursor: pointer;
+        }
+
+        button[type="reset"] {
+            border: lightgrey 1px solid;
+            border-radius: 5px;
+            height: 50px;
+            width: 175px;
+            background-color: antiquewhite;
+            text-align: center;
+            /*设置字距*/
+            letter-spacing: 2px;
+            /*移入按钮后变成小手形式*/
+            cursor: pointer;
+        }
+    </style>
+    <title>weeat</title>
+</head>
+
+<body>
+    <h1><a href="index.html" title="网站主页">
+        <span class="first">WE</span><span class="second"> eat</span></a></h1>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <h2>注册</h2>
+    <div class="center">
+            
+            <br />
+            <br />
+            <form class="layui-form" id="form1"  method="POST" style="color:blue;">
+                <div class="layui-form-item">账号：<input id='user' type="text" name="username" autocomplete="off" placeholder="请输入用户名" lay-verify="required|username"/></div><br>
+                <div class="layui-form-item">密码：<input type="password" name="password" lay-verify="required|password"/></div><br>
+                <div class="layui-form-item">确认密码：<input type="password" name="repassword" lay-verify="required|repassword"/></div><br>
+                <button type="submit"  class="lai-btn" lay-submit="">注册</button>
+              </form>  
+          </div>
+
+        </form>
+    </div>
+    <script src="./assets/layui/layui.js" src1="https://cdn.staticfile.org/layui/2.6.8/layui.js"></script>
+    <script>
+        layui.use(['form', 'util'], function(){
+          console.log('111111~~~~~~~~')
+          var $ = layui.$;
+          var form = layui.form;
+          var layer = layui.layer;
+          var util = layui.util;
+          let rep=''
+          // 自定义验证规则
+          form.verify({
+            username: function(value){
+              if(value && value.length < 4){ // 值若填写时才校验
+                return '用户名需要大于4位';
+              }
+            },
+            password: function(value) {
+              rep = value
+              if (!/(.+){6,12}$/.test(value)) {
+                return '密码必须 6 到 12 位';
+              }
+            },
+            repassword: function (value) { 
+              console.log('password ',JSON.stringify(rep)) 
+              console.log('repassword is  ~~~',JSON.stringify(value))
+              //alert('rep is ',rep, ' repass is  ',value)
+              //if (JSON.stringify(rep)==JSON.stringify(value)) {
+              if (rep == value) {
+                console.log(' equal   ？？？？')
+              }
+             else {
+                 console.log('rep ！== value')
+                return '两次密码不一致'
+              }
+            }
+          });   
+          
+          // 提交事件
+          form.on('submit(*)', function(data){
+            console.log(data)
+            alert(JSON.stringify(data.field));          
+            });
+          });
+          
+                // 监听表单的提交事件
+        $('#form1').on('submit', function (e) {        
+          // 阻止默认提交行为
+          e.preventDefault()
+  console.log('will connect to server')
+          //发起 POST 注册请求
+          $.post('/api/reguser', $(this).serialize(), function (res) {
+            console.log(res)
+            // status 为 200 表示注册成功；否则表示注册失败！
+            if (res.status === 200) {
+              window.localStorage.setItem("token",res.token)
+              //window.sessionStorage.setItem("token",res.token)  
+              console.log('token is '+ window.localStorage.getItem("token"))
+              alert('注册成功！')
+              location.href = '/index.html'
+            } else {   
+              console.log('get info is ',res)           
+                alert('注册失败！' + res.message)
+            }
+          })
+  
+        })
+        </script>
+   </body>
+  
+  </html>
